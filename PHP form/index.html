@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHp form connections:-</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <form method="POST" action="" name="NameForm">
+        <label for="name">
+            Name <input type="text" name="name">
+        </label>
+        <label for="name">
+            Email <input type="text" name="email">
+        </label>
+        <label for="name">
+            Message <input type="text" name="number">
+        </label>
+        <label for="name">
+            Age <input type="text" name="Message">
+        </label>
+        <input type="submit" value="submit" name="submit">
+    </form>
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbz1MttA81GQWjXQP7EN_sDOx3dduFOeQMX1LbX7-ak7IwTwc8l_8nBR3v1OsFVlZxyUSQ/exec'
+			const form = document.forms['NameForm']
+		  
+			form.addEventListener('submit', e => {
+			  e.preventDefault()
+			  fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+				.then(response => alert("Thank you! your form is submitted successfully." ))
+				.then(() => {  window.location.reload(); })
+				.catch(error => console.error('Error!', error.message))
+			})
+    </script>
+
+
+
+</body>
+</html>
