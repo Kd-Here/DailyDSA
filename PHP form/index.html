@@ -24,19 +24,7 @@
         </label>
         <input type="submit" value="submit" name="submit">
     </form>
-    <script>
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbz1MttA81GQWjXQP7EN_sDOx3dduFOeQMX1LbX7-ak7IwTwc8l_8nBR3v1OsFVlZxyUSQ/exec'
-			const form = document.forms['NameForm']
-		  
-			form.addEventListener('submit', e => {
-			  e.preventDefault()
-			  fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-				.then(response => alert("Thank you! your form is submitted successfully." ))
-				.then(() => {  window.location.reload(); })
-				.catch(error => console.error('Error!', error.message))
-			})
-    </script>
-
+    Message
 
 
 </body>
