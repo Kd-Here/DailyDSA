@@ -1,3 +1,61 @@
+##############################
+#Class python code
+##############################
+
+import math
+
+class Points(object):
+    def __init__(self, x, y, z):
+        self.x = x
+        self.y = y
+        self.z = z
+        #creating x,y,z as instant variables of Points class
+
+    def __sub__(self, no):
+        x=self.x - no.x # bcoz object should accessible by object . attribute 
+        y=self.y - no.y
+        z= self.z- no.z
+        c = Points(x,y,z) #creating a object of value for easy calculation
+        return  c  #Subtraction here is object so have x,y,z
+    
+    def dot(self, no):
+        x=self.x*no.x
+        y=self.y*no.y
+        z= self.z*no.z
+        a = x+y+z  #Did here wrong dot product is sum of all dot multiple value
+        return a #It's a scalar so no x,y,z attributes for dot value
+
+    def cross(self, no):
+        first = self.y*no.z-self.z*no.y
+        second = self.x*no.z-self.z*no.x
+        third = self.x*no.y-self.y*no.x
+        c = Points(first,second,third)
+        return c #cross product is not scalar value i.e must have x,y,z form
+
+        
+        
+    def absolute(self):
+        return pow((self.x ** 2 + self.y ** 2 + self.z ** 2), 0.5)
+
+if __name__ == '__main__':
+    points = list()
+    for i in range(4):
+        a = list(map(float, input().split()))
+        points.append(a)
+
+    a, b, c, d = Points(*points[0]), Points(*points[1]), Points(*points[2]), Points(*points[3])
+    x = (b - a).cross(c - b)
+    y = (c - b).cross(d - c)
+    angle = math.acos(x.dot(y) / (x.absolute() * y.absolute()))
+
+    print("%.2f"% math.degrees(angle))
+# Here this is method of formating in python
+
+
+
+
+
+
 # # import math
 
 # # class Points(object):
@@ -89,30 +147,30 @@
 
 
 
-class Points(object):
-    def __init__(self, x, y, z):
-        self.x = x
-        self.y = y
-        self.z = z
+# class Points(object):
+#     def __init__(self, x, y, z):
+#         self.x = x
+#         self.y = y
+#         self.z = z
 
-    def __sub__(self, no):
-        x=self.x - no.x
-        y=self.y - no.y
-        z= self.z-no.z
-        c = Points(x,y,z) #creating a object of value for easy calculation
-        return  c
+#     def __sub__(self, no):
+#         x=self.x - no.x
+#         y=self.y - no.y
+#         z= self.z-no.z
+#         c = Points(x,y,z) #creating a object of value for easy calculation
+#         return  c
 
    
 
-if __name__ == '__main__':
-    points = list()
-    for i in range(2):
-        a = list(map(float, input().split()))
-        points.append(a)
+# if __name__ == '__main__':
+#     points = list()
+#     for i in range(2):
+#         a = list(map(float, input().split()))
+#         points.append(a)
 
-    a, b = Points(*points[0]), Points(*points[1])
-    print(a.x)
-    print(b.y)
-    print(type(a))
-    x = (b - a)
-    print(x.x,x.y,x.z)
+#     a, b = Points(*points[0]), Points(*points[1])
+#     print(a.x)
+#     print(b.y)
+#     print(type(a))
+#     x = (b - a)
+#     print(x.x,x.y,x.z)
