@@ -2,9 +2,13 @@ import math
 
 class Complex(object):
     def __init__(self, real, imaginary):
-        self.
+        self.x =real
+        self.y =imaginary 
+        # z = x + iy complex equantion
         
     def __add__(self, no):
+        a = self.x+no[1]
+        b = self.y+no[2]
         
     def __sub__(self, no):
         
