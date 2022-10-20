@@ -17,9 +17,7 @@ else:
 
 
 
-
-
-
+print("Sorry I didn't do any thing today")
 
 
 
