@@ -11,12 +11,15 @@ class Complex(object):
         b = self.y+no[2]
         
     def __sub__(self, no):
+        pass
         
     def __mul__(self, no):
+        pass
 
     def __truediv__(self, no):
+        pass
 
-    def mod(self):
+    def mod(self):pass
 
     def __str__(self):
         if self.imaginary == 0:
@@ -33,3 +36,4 @@ class Complex(object):
         return result
 
 if __name__ == '__main__':
+    print("Hi")
